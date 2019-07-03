@@ -7,7 +7,9 @@ RUN wget --no-check-certificate https://github.com/fatedier/frp/releases/downloa
     cd frp_${FRP_VERSION}_linux_amd64 && \
     mkdir -p /etc/frp/ &&  \
     mv frps /frps && \
+	mv frpc /frpc && \
     mv frps.ini /frps.ini && \
+	mv frpc.ini /frpc.ini && \
     cd .. && \
     rm -rf *.tar.gz && \
     rm -rf frp_${FRP_VERSION}_linux_amd64
@@ -15,4 +17,4 @@ RUN wget --no-check-certificate https://github.com/fatedier/frp/releases/downloa
 WORKDIR /
 EXPOSE 7000
 
-ENTRYPOINT ["/frps -c /frps.ini"]
+ENTRYPOINT ["/frps -c ./frps.ini"]
