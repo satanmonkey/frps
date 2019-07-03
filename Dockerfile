@@ -15,4 +15,4 @@ RUN wget --no-check-certificate https://github.com/fatedier/frp/releases/downloa
 WORKDIR /
 EXPOSE 7000
 
-ENTRYPOINT ["/frps"]
+ENTRYPOINT ["/frps -c /frps.ini"]
